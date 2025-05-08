@@ -104,6 +104,93 @@ int main (){
     return 0;
 }
 
+Inheritance task # 3:
+
+#include <iostream>
+using namespace std;
+
+class Book{
+    string title;
+    string author;
+    
+public:
+    Book(string title, string author)
+    {
+        this->title = title;
+        this->author = author;
+    }
+    
+    void displayInfo()
+    {
+        cout << "Book title: " << title << endl;
+        cout << "Book author: " << author << endl;
+    }
+};
+
+class PrintedBook: public Book{
+    int pages;
+    
+public:
+    PrintedBook(int pages, string title, string author): Book (title, author)
+    {
+        this->pages = pages;
+    }
+    
+    void displayInfo()
+    {
+        Book::displayInfo();
+        cout << "Book pages: " << pages << endl;
+    }
+    
+};
+
+int main() {
+    
+    PrintedBook PB1(500, "Fundamentals of C++", "Shakir Ullah");
+    PB1.displayInfo();
+    
+    return 0;
+}
+
+Inheritance Task # 4:
+
+#include <iostream>
+using namespace std;
+
+class Person{
+    string name;
+    int age;
+public:
+    Person(string Name, int Age): name(Name), age(Age){ }
+    
+    virtual void displayInfo()
+    {
+        cout << "Person Name: " << name << endl;
+        cout << "Person Age: " << age << endl;
+    }
+};
+
+class Employee: public Person{
+    int employeeID;
+    string position;
+    
+public: 
+    Employee(string Name, int Age, int employee_ID, string Position): Person(Name, Age), employee_ID(employeeID), Position(position){ }
+    
+    
+};
+
+class Manager: public Employee{
+    
+};
+int main() {
+    
+    PrintedBook PB1(500, "Fundamentals of C++", "Shakir Ullah");
+    PB1.displayInfo();
+    
+    return 0;
+}
+
 ---
 Shakir61/Shakir61 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.

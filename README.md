@@ -191,6 +191,74 @@ int main() {
     return 0;
 }
 
+Operator Overloading Function:
+#include <iostream>
+using namespace std;
+
+class Time
+{
+    int second;
+    int minute;
+    int hour;
+    
+public:
+    Time (int S = 0, int M = 0, int H = 0)
+    {
+        second = S;
+        minute = M;
+        hour = H;
+    }
+    
+    Time operator+(Time var)
+    {
+        Time result;
+        result.second = second + var.second;
+        result.minute = minute + var.minute;
+        result.hour = hour + var.hour;
+        
+        return result;
+    }
+    
+    Time operator-(Time var)
+    {
+        Time result;
+        result.second = second - var.second;
+        result.minute = minute - var.minute;
+        result.hour = hour - var.hour;
+        
+        return result;
+    }
+    
+    void displayAdd ()
+    {
+        cout << "Addition: " << second << ", " << minute << ", " << hour << endl;
+    }
+    
+    void displaySub ()
+    {
+        cout << "Subtraction: " << second << ", " << minute << ", " << hour << endl;
+    }
+};
+
+int main() {
+    
+    Time T1 (55, 32, 11);
+    Time T2 (50, 42, 12);
+    
+    Time T3;
+    
+    T3 = T1 + T2;
+    T3.displayAdd();
+    
+    Time T4(30, 23, 4);
+    Time T5(40, 45, 8);
+    Time T6;
+    
+    T6 = T5 - T4;
+    T6.displaySub ();
+    return 0;
+}
+
 ---
 Shakir61/Shakir61 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.

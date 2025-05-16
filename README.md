@@ -259,6 +259,40 @@ int main() {
     return 0;
 }
 
+Method Chaining method:
+#include<iostream>
+using namespace std;
+
+class A{
+public:
+    int x;
+    int y;
+    
+    A& setX(int val)
+    {  
+        x = val;
+        return *this;
+    }
+    
+    A& setY(int val)
+    {  
+        y = val;
+        return *this;
+    }
+    
+    void display()
+    {
+        cout << "x: " << x << " " << "y: " << y << endl;
+    }
+};
+
+int main ()
+{
+    A object;
+    object.setX(4).setX(5);
+    object.display();
+    
+}
 ---
 Shakir61/Shakir61 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
